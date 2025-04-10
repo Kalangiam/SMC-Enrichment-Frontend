@@ -27,7 +27,7 @@ const AssignGrade = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("https://smc-enrichment-backend.onrender.com//api/admin/users", {
+        const res = await axios.get("https://smc-enrichment-backend.onrender.com/api/admin/users", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
           },
@@ -49,7 +49,7 @@ const AssignGrade = () => {
   // 🔹 Function to Download All Certificates
   const handleDownloadCertificates = async () => {
     try {
-      const response = await axios.get("https://smc-enrichment-backend.onrender.com//api/admin/download-certificates", {
+      const response = await axios.get("https://smc-enrichment-backend.onrender.com/api/admin/download-certificates", {
         responseType: "blob",
       });
 
@@ -69,7 +69,7 @@ const AssignGrade = () => {
   // 🔹 Function to Download a Single User's Certificate
   const handleDownloadUserCertificate = async (userId, userName) => {
     try {
-      const response = await axios.get(`https://smc-enrichment-backend.onrender.com//api/admin/download-certificate/${userId}`, {
+      const response = await axios.get(`https://smc-enrichment-backend.onrender.com/api/admin/download-certificate/${userId}`, {
         responseType: "blob",
       });
 

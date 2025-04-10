@@ -20,7 +20,7 @@ const Login = () => {
     e.preventDefault();
     setError(""); // Clear previous errors
     try {
-      const res = await axios.post("https://smc-enrichment-backend.onrender.com//api/users/login", formData);
+      const res = await axios.post("https://smc-enrichment-backend.onrender.com/api/users/login", formData);
       login(res.data.token);
       navigate("/dashboard"); // ✅ Redirect to dashboard after login
     } catch (error) {

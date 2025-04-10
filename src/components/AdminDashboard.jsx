@@ -61,7 +61,7 @@ const AdminDashboard = () => {
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem("adminToken"); // or however you stored it
-        const res = await axios.get("https://smc-enrichment-backend.onrender.com//api/admin/users", {
+        const res = await axios.get("https://smc-enrichment-backend.onrender.com/api/admin/users", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -118,7 +118,7 @@ const AdminDashboard = () => {
         };
       });
 
-      await axios.put(`https://smc-enrichment-backend.onrender.com//api/admin/update-grades/${editingUser._id}`, {
+      await axios.put(`https://smc-enrichment-backend.onrender.com/api/admin/update-grades/${editingUser._id}`, {
         grades: formattedGrades,
       });
 
@@ -146,12 +146,12 @@ const AdminDashboard = () => {
   );
 
   const handleDownloadCertificates = () => {
-    window.open("https://smc-enrichment-backend.onrender.com//api/admin/download-certificates", "_blank");
+    window.open("https://smc-enrichment-backend.onrender.com/api/admin/download-certificates", "_blank");
   };
 
   const handleDownloadUser = async () => {
     try {
-      const res = await axios.get("https://smc-enrichment-backend.onrender.com//api/users/export/csv", {
+      const res = await axios.get("https://smc-enrichment-backend.onrender.com/api/users/export/csv", {
         responseType: "blob",
       });
 

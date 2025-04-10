@@ -48,7 +48,7 @@ const Register = () => {
         formDataToSend.append(key, value ?? "");
       });
 
-      await axios.post("https://smc-enrichment-backend.onrender.com//api/users/register", formDataToSend, {
+      await axios.post("https://smc-enrichment-backend.onrender.com/api/users/register", formDataToSend, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
