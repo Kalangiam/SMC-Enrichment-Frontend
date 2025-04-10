@@ -35,7 +35,7 @@ const Dashboard = () => {
           return;
         }
 
-        const res = await axios.get(`http://localhost:5000/api/users/profileData/${user.id}`);
+        const res = await axios.get(`https://smc-enrichment-backend.onrender.com//api/users/profileData/${user.id}`);
         setprofileData(res.data);
         toast.success("Profile data fetched successfully!", { id: "profileData-success" });
       } catch (err) {
